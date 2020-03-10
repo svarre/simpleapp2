@@ -8,7 +8,8 @@ pipeline{
                 skipDefaultCheckout()
             }
             steps{
-                
+                echo "Hello_world"
             }
         }
     }
+}
