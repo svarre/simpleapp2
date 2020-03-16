@@ -1,14 +1,16 @@
-pipeline{
-    agent none
-    
+// Example for when not 
+
+pipeline {
+    agent any
     stages{
         stage('Build'){
-            agent any
-            options{
-                skipDefaultCheckout()
+            when{
+                not{
+                    branch 'master'
+                }
             }
             steps{
-                echo "Hello_world"
+                echo "printing branch****"
             }
         }
     }
