@@ -1,15 +1,18 @@
-// Example for when not 
-
-pipeline {
-    agent any
+pipeline{
+    agent any 
+    environment {
+        name1 = 'siva'
+    }
     stages{
         stage('Build'){
             when{
-                // branch 'featuree'
-                expression {env.BRANCH_NAME == 'featureu'}               
+                allOf{
+                    branch 'feature'
+                    environment name: 'name1' , value:'sivaa'
+                }
             }
             steps{
-                echo "printing branch name : ${env.BRANCH_NAME}"
+                echo "executing Build, as allOf condition is succesfull"
             }
         }
     }
