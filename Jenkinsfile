@@ -12,7 +12,7 @@ pipeline{
             when{
                 allOf{
                     branch 'feature'
-                    environment name: 'name1' , value:'sivaa'
+                    environment name: 'name1' , value:'siva'
                     expression{
                         env.APP_NAME != 'somename'
                     }
