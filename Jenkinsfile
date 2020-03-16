@@ -2,6 +2,7 @@ pipeline{
     agent any 
     environment {
         name1 = 'siva'
+        APP_NAME = 'testapp'
     }
     stages{
         stage('Build'){
@@ -9,6 +10,9 @@ pipeline{
                 allOf{
                     branch 'feature'
                     environment name: 'name1' , value:'siva'
+                    expression{
+                        env.APP_NAME != 'somename'
+                    }
                 }
             }
             steps{
