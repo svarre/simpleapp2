@@ -5,7 +5,8 @@ pipeline {
     stages{
         stage('Build'){
             when{
-                branch 'featuree'
+                // branch 'featuree'
+                expression {env.BRANCH_NAME == 'feature'}               }
             }
             steps{
                 echo "printing branch name : ${env.BRANCH_NAME}"
