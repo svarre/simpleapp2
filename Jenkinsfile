@@ -11,7 +11,7 @@ pipeline{
                     branch 'feature'
                     environment name: 'name1' , value:'siva'
                     expression{
-                        env.APP_NAME != 'somename'
+                        env.APP_NAME != 'testapp'
                     }
                 }
             }
