@@ -1,14 +1,25 @@
-pipeline {
-    agent any 
+pipeline{
+    agent any
     stages{
-        stage('Build'){
-        when{
-            buildingTag()
+        parallel{
+            stage('Stage1'){
+            steps{
+                echo "Executing Stage1"
+                sleep 10
+            }
         }
-        steps{
-            echo 'Building tag release'
+            stage('Stage2'){
+                steps{
+                    echo "executing stage2"
+                    sleep 10
+                }
+            }
+            stage('Stage3'){
+                steps{
+                    echo "Executing Stage3"
+                    sleep 10
+                }
+            }
         }
-    }
-
     }
 }
