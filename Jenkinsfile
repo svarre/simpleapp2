@@ -1,26 +1,30 @@
 pipeline{
     agent any
     stages{
-        stage('Parallel Stage'){
+        stage('Normal Stage'){
+            echo 'Building normal stage'
+        }
+        stage('Scans'){
                 parallel{
-                stage('Stage1'){
+                stage('Sonar'){
                     steps{
                         echo "Executing Stage1"
                         sleep 10
                     }
             }
-                stage('Stage2'){
+                stage('Fortify'){
                     steps{
                         echo "executing stage2"
                         sleep 10
                     }
                 }
+                /*
                 stage('Stage3'){
                     steps{
                         echo "Executing Stage3"
                         sleep 10
                     }
-                }
+                }*/
             }
         }
     }
