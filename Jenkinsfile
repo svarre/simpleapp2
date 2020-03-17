@@ -30,6 +30,7 @@ pipeline{
                 timeout(time: 300 , unit: 'SECONDS'){
                     input message:'Promote to prod', ok:'yes'
                 }
+                echo "Promotting to prod"
              
             }
         }
