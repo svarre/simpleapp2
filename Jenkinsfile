@@ -8,10 +8,12 @@ pipeline{
  
         }
         stage('Scans'){
+                failFast True
                 parallel{
                 stage('Sonar'){
                     steps{
                         echo "Executing Stage1"
+                        error 'Executing error message'
                         sleep 10
                     }
             }
