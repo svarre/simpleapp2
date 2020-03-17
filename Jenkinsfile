@@ -2,7 +2,10 @@ pipeline{
     agent any
     stages{
         stage('Normal Stage'){
-            echo 'Building normal stage'
+            step{
+                echo 'Building normal stage'
+            }
+ 
         }
         stage('Scans'){
                 parallel{
